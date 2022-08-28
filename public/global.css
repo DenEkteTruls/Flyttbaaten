@@ -1,0 +1,31 @@
+@import url("font/trenda.css");
+
+:root {
+	--background-color: white;
+	--yellow: #F7B850;
+	--lightyellow: #ffce80;
+	--superlightyellow: #f7b7502d;
+	--grey: #F8F8F8;
+	--dark-grey: #767779;
+	--black: #191A1E;
+	--font-regular: 'Trenda Regular';
+	--font-bold: 'Trenda Bold';
+	--font-thin: 'Trenda Thin';
+	--font-semibold: 'Trenda Semibold';
+	--navbar-height: 120px;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: var(--black);
+	box-sizing: border-box;
+	font-family: 'Trenda Regular';
+	max-width: 1500px;
+	max-height: 1000px;
+	margin: 0 auto;
+}
