@@ -38,8 +38,8 @@
         margin-left: 10px;
         justify-content: space-between;
         align-items: center;
-        position: absolute;
-        bottom: 20px;
+        position: relative;
+        top: 20px;
     }
 
     .button {
