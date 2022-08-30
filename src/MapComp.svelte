@@ -18,13 +18,13 @@
 </script>
 
 
-
+<div id="kart">
 <Map style="mapbox://styles/denektetruls/cl7d8golr004x15nq3d6s1tu8"
     accessToken="pk.eyJ1IjoiZGVuZWt0ZXRydWxzIiwiYSI6ImNrOWgwbzJiNjA4OHozbm13bjZxMjVwZTMifQ.VtqneIR4Cwwx-iYGjhLFxw"
     bind:center
     bind:zoom>
 </Map>
-
+</div>
 
 
 <!--
