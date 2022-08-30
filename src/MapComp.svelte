@@ -27,6 +27,18 @@
 </div>
 
 
+
+<style>
+	#kart {
+		height: calc(100% - var(--navbar-height));
+    		width: 60%;
+    		position: absolute;
+    		margin-left: 32.5%;
+    		max-height: 100%;
+    		border-radius: 5px;
+	}
+</style>
+
 <!--
 
 div {
