@@ -1,15 +1,14 @@
 <script>
-    export let database;
-
     import MapComp from "./MapComp.svelte";
     import BoatTypes from "./containers/BoatTypes.svelte";
     import Glider from "./containers/Glider.svelte";
     import Crew from "./containers/Crew.svelte";
+    import Navbar from "./Navbar.svelte";
 </script>
 
 
-
-<MapComp {database}/>
+<Navbar/>
+<MapComp/>
 <div class="container">
     <BoatTypes/>
     <Glider max_value="5000" min_value="0" fraction="10" name="Pris" article="K" end="NOK"/>

@@ -69,6 +69,6 @@
         color: rgba(0, 0, 0, 0.85);
         font-size: 15px;
         font-family: var(--font-bold);
-        padding-top: 5px;
+        padding-top: 0px;
     }
 </style>

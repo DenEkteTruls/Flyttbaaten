@@ -1,9 +1,10 @@
 <script>
-    export let database;
 
     import { Map, Geocoder, Marker, controls } from '@beyonk/svelte-mapbox'
     const { GeolocateControl, NavigationControl, ScaleControl } = controls
     import { ref, onValue } from 'firebase/database';
+    import { database } from './firebase/firebase_main';
+    import BoatCards from "./containers/BoatCards.svelte";
 
     let lat = 59.3022;
     let lng = 10.5874;
@@ -15,15 +16,17 @@
 	onValue(ref_, (snap) => {
         console.log(snap.val());
     });
+    
 </script>
 
 
 <div id="kart">
-<Map style="mapbox://styles/denektetruls/cl7d8golr004x15nq3d6s1tu8"
-    accessToken="pk.eyJ1IjoiZGVuZWt0ZXRydWxzIiwiYSI6ImNrOWgwbzJiNjA4OHozbm13bjZxMjVwZTMifQ.VtqneIR4Cwwx-iYGjhLFxw"
-    bind:center
-    bind:zoom>
-</Map>
+    <Map style="mapbox://styles/denektetruls/cl7d8golr004x15nq3d6s1tu8"
+        accessToken="pk.eyJ1IjoiZGVuZWt0ZXRydWxzIiwiYSI6ImNrOWgwbzJiNjA4OHozbm13bjZxMjVwZTMifQ.VtqneIR4Cwwx-iYGjhLFxw"
+        bind:center
+        bind:zoom>
+    </Map>
+    <BoatCards/>
 </div>
 
 
