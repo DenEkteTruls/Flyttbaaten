@@ -1,20 +1,28 @@
 <script>
-
+    export let mode;
 </script>
 
 
 <div class="container">
     <div class="left">
         <div class="doodle">
-            <button class="left-button active" id="flytt-button">Flytt</button>
-            <button class="left-button" id="frakt-button">Frakt</button>
-            <button class="left-button" id="alle-button">Alle</button>
+            {#if mode != "profile"}
+                <button class="left-button active" id="flytt-button">Flytt</button>
+                <button class="left-button" id="frakt-button">Frakt</button>
+                <button class="left-button" id="alle-button">Alle</button>
+            {:else}
+                <button on:click="{() => {window.location.href="/";}}" class="left-button" style="color: rgba(0, 0, 0, 0.7); font-family: var(--font-semibold); font-size: 20px; cursor: pointer;">{'<'} tilbake</button>
+            {/if}
         </div>
     </div>
     <div class="middle">
         <div class="searchbar">
             <img src="search-icon.png" alt="" id="search-icon"/>
-            <input type="text" id="search" placeholder="Søk i ditt område"/>
+            {#if mode == "profile"}
+                <input type="text" id="search" placeholder="Søk i innstillinger"/>
+            {:else}
+                <input type="text" id="search" placeholder="Søk i ditt område"/>
+            {/if}
         </div>
     </div>
     <div class="right">
@@ -22,10 +30,17 @@
             <div class="image-container">
                 <img src="bell.png" alt="" id="notifications"/>
             </div>
+            {#if mode != "profile"}
+            <div on:click="{() => {window.location.href="/profile";}}" class="image-container profile">
+                <img src="default-profile-icon.png" alt="" id="profile-icon"/>
+                <div id="profile-status"></div>
+            </div>
+            {:else}
             <div class="image-container profile">
                 <img src="default-profile-icon.png" alt="" id="profile-icon"/>
                 <div id="profile-status"></div>
             </div>
+            {/if}
         </div>
     </div>
 </div>
@@ -137,7 +152,15 @@
     }
 
     .image-container > img {
-        width: 22px;
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    #notifications {
+        width: 25px;
+        height: 27px
     }
 
     .profile {

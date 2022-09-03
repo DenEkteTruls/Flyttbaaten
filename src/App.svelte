@@ -7,6 +7,7 @@
 	import Home from "./Home.svelte";
 	// import Navbar from "./Navbar.svelte";
 	import Login from './Login.svelte';
+	import Profile from './Profile.svelte';
 
 	checkAuth();
 	getBoatImage()
@@ -15,6 +16,7 @@
 
 	router("/", () => page = Home);
 	router("/login", () => page = Login);
+	router("/profile", () => page = Profile);
 
 	router.start();
 </script>
